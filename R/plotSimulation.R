@@ -47,7 +47,7 @@
 #'
 #' @export
 plot_functional_data <- function(data, show_metrics = TRUE) {
-  par(mar = c(4, 4, 4, 1))
+  #par(mar = c(4, 4, 4, 1))
 
   ylim_range <- range(data$all_curves)
 

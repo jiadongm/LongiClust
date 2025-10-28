@@ -1,6 +1,7 @@
 set.seed(123)
 
-par(mfrow = c(2, 2), mar = c(4, 4, 4, 1))
+source("R/simulation.R")
+source("R/plotSimulation.R")
 
 # Scenario 1: Low within variation & high separation between groups
 
