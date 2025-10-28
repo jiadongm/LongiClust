@@ -5,4 +5,4 @@
 vignettes/*html
 inst/doc
 *.Rbuildignore
-.Rproj.user
+*.Rproj.user
