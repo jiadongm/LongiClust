@@ -1,4 +1,51 @@
-# Plotting function
+#' Visualize Simulated Functional Data
+#'
+#' @param data List. Output from simulate_functional_data()
+#' @param show_metrics Logical. Whether to display separation metrics on plot (default: TRUE)
+#' @param alpha Numeric. Transparency for individual curves (default: 0.2)
+#' @param col_pop1 Character. Color for cluster 1 (default: "blue")
+#' @param col_pop2 Character. Color for cluster 2 (default: "red")
+#' @param lwd_mean Numeric. Line width for mean functions (default: 3)
+#' @param ... Additional arguments passed to matplot()
+#'
+#' @details
+#' Creates a visualization showing:
+#' \itemize{
+#'   \item Individual trajectories for each cluster (semi-transparent)
+#'   \item Mean trajectories for each cluster (solid lines)
+#'   \item Optional separation metrics overlay
+#' }
+#'
+#' The separation ratio (mean difference / average within-cluster SD) provides
+#' a standardized measure of clustering difficulty, similar to Cohen's d in
+#' two-sample comparisons.
+#'
+#' @examples
+#' \dontrun{
+#' # Generate and visualize data
+#' data <- simulate_functional_data(
+#'   within_var = 1.0,
+#'   between_sep = 2.0
+#' )
+#' plot_functional_data(data)
+#'
+#' # Multiple scenarios in one figure
+#' par(mfrow = c(2, 2))
+#'
+#' data1 <- simulate_functional_data(within_var = 0.3, between_sep = 2.5)
+#' plot_functional_data(data1, main = "Easy: Low var, high sep")
+#'
+#' data2 <- simulate_functional_data(within_var = 2.0, between_sep = 2.5)
+#' plot_functional_data(data2, main = "Moderate: High var, high sep")
+#'
+#' data3 <- simulate_functional_data(within_var = 0.3, between_sep = 1.0)
+#' plot_functional_data(data3, main = "Moderate: Low var, low sep")
+#'
+#' data4 <- simulate_functional_data(within_var = 2.0, between_sep = 1.0)
+#' plot_functional_data(data4, main = "Hard: High var, low sep")
+#' }
+#'
+#' @export
 plot_functional_data <- function(data, show_metrics = TRUE) {
   par(mar = c(4, 4, 4, 1))
 
