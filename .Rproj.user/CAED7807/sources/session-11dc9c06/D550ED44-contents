@@ -1,0 +1,15 @@
+library(devtools)
+simDat <- readRDS("~/Dropbox/Research_projects/LongiClust/data/simulated_longitudinal_data.rds")
+
+simDat$time_grid
+
+B = 100
+d0 = 1
+r = 5
+grid = simDat$time_grid
+RP <- generateRP(B, d0, r, basis = "bspline", grid, bspline_degree = 3)
+
+plot.random_projections(RP, type = "both")
+
+
+
