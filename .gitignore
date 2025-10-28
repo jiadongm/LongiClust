@@ -1,9 +1,7 @@
-*.rds
-*DS_Store*
-*.RData*
-*cache*
-vignettes/*html
-inst/doc
-*.Rbuildignore
 *.Rproj.user
+*.Rhistory
+*.RData
+*.DS_Store
+*.Ruserdata
 .Rproj.user
+.Rproj.user/
